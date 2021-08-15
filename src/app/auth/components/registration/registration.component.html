@@ -1,0 +1,59 @@
+<div id="container">
+    <div class="login-nav-bar">
+        <ul class="navlist">
+            <li class="nav-list-item"><a routerLink="/login" routerLinkActive="active">Sign in</a></li>
+            <li class="nav-list-item"><a routerLink="/registration" routerLinkActive="active">Sign up</a></li>
+        </ul>
+    </div>
+    <div class="hero-section">
+        <div class="signup-box">
+            <div class="signup-img"></div>
+            <div class="btn-wraper">
+                <div class="btn-sign btn-forgot-password"><a href="">Forgot Password?</a></div>
+                <div class="btn-sign signin-text"> <a href=""> Sign In</a></div>
+            </div>
+        </div>
+        <div class="signup-form">
+            <div class="signup-inner-container">
+                <h6>Sign Up For Free</h6>
+                <form [formGroup]="frmRegister" >
+                    <div class="form-group input-container">
+                        <input type="text" class="form-control inputbox"  name="email" id="email" formControlName="email" placeholder="Email">
+                        <small *ngIf="email.errors && email.touched" class="text-danger"> email id is required </small>
+                    </div>
+
+                    <div class="form-group input-container">
+                        <input type="password" class="form-control inputbox" name="password" formControlName="password" id="password" placeholder="Password">
+                        <small *ngIf="password.errors && password.touched" class="text-danger">password is required</small>
+                        
+                    </div>
+
+                    <div class="form-group input-container">
+                        <select [(ngModel)]="status" name="selectcountry" class="form-control"  formControlName="selectcountry">
+                            <option *ngFor="let status_item of status_values">
+                            {{status_item}}
+                            </option>
+                        </select>
+                        <small *ngIf="selectcountry.errors && selectcountry.touched" class="text-danger">field required</small>
+                    </div>
+
+                    <div class="form-group signup-checkbox">
+                        <input type="checkbox"  formControlName="termsncondition" name="termsncondition" class="form-control signup-checkbox-lable">
+                        <label for="" class="signup-checkboxl">Agree to terms and conditions</label>
+                        <small *ngIf="termsncondition.errors && termsncondition.touched" class="text-danger">field required</small>
+                    </div>
+
+                    <button type="button" (click)="onRegister()" [disabled]="!frmRegister.valid"  class="btn btn-register">Register
+                    </button>
+                    
+                    <div class="btn-wraper">
+                        <div class="btn-sign btn-forgot-password"><a href="">Forgot Password?</a></div>
+                        <div class="btn-sign"> <a href=""> Sign In</a></div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

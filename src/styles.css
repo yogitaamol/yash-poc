@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+p{
+    background: red;
+    color: #fff;
+    padding: 5px;
+    font-family: roboto-regular;
+}
+
+@font-face {
+    font-family: 'roboto-regular';
+    src: url('/assets/resources/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.login-nav-bar{
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+}
+.navlist{
+    list-style-type: none;
+    font-size: 14px;
+    float: right;
+}
+.nav-list-item{
+    display: inline;
+    padding: 10px;
+    color: #fcfcfc;
+    text-decoration: none;
+	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+}
+.navlist .nav-list-item a{
+    color: gray;
+}
+.navlist .nav-list-item a:hover{
+    color: black;
+}
+.navlist .nav-list-item a:active {
+    color: rgb(133, 126, 126);
+  }

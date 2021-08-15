@@ -1,0 +1,31 @@
+<div class="login-nav-bar">
+    <ul class="navlist">
+        <!-- <li class="nav-list-item"><a routerLink="/home" routerLinkActive="active">Home</a></li> -->
+        <li class="nav-list-item"><a routerLink="/login" routerLinkActive="active">Sign in</a></li>
+        <li class="nav-list-item"><a routerLink="/registration" routerLinkActive="active">Sign up</a></li>
+    </ul>
+</div>
+<div id="container">
+    <main>
+        <div class="container frm-container" [formGroup]="frmLogin">
+            <h2 class="pb-2 frm-heading">Sign in</h2>
+            <h6 class="frm-heading2"> <a href="" routerLink="/registration">Need an account?</a></h6>
+            <form class="">
+
+                <div class="form-group input-container">
+                    <small *ngIf=" frmLogin.controls['email'].errors &&frmLogin.controls['email'].touched" class="text-danger"> email id is required </small>
+                    <input type="text" formControlName="email" class="form-control inputbox log-inputbox" id="username " placeholder="Email">
+                    
+                </div>
+                <div class="form-group input-container">
+                    <small *ngIf="frmLogin.controls['password'].errors && frmLogin.controls['password'].touched" class="text-danger">password is required</small>
+                    <input type="password" formControlName="password" class="form-control inputbox log-inputbox" id="password" placeholder="Password">
+                    
+                </div>
+                <button (click)="submitLogin()" [disabled]="!frmLogin.valid"   type="button" class="btn button-mrg">Submit</button>
+                <small *ngIf="showError"> email and password are not match</small>
+                
+            </form>
+        </div>
+    </main>
+</div>

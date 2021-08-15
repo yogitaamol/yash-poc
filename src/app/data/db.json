@@ -1,0 +1,10 @@
+{
+    "customers" :[
+        {
+            "email": "amol@123",
+            "password" : "1234",
+            "country": "uk",
+            "termsncondition": true
+        }
+    ]
+}
