@@ -3,6 +3,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PolicyService } from 'src/app/policy.service';
+import { Subscription }   from 'rxjs';
 // const fs = require('fs');
 
 @Component({
@@ -12,7 +13,8 @@ import { PolicyService } from 'src/app/policy.service';
 })
 
 export class RegistrationComponent implements OnInit {
-
+  subscription!: Subscription;
+  isShowNavBar = true;
   
   status : any  = "UK";
   status_values: any = ["UK", "India", "US"];
@@ -22,6 +24,7 @@ export class RegistrationComponent implements OnInit {
   registrationList: any=[];
 
   @Output() output=new EventEmitter<any>();
+  submitted: boolean = false;
   constructor( 
     private http:HttpClient,
     private policy:PolicyService,
@@ -38,7 +41,7 @@ export class RegistrationComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required]),
       selectcountry: new FormControl(null, [Validators.required]), 
-      termsncondition: new FormControl(null, [Validators.required])
+      termsncondition: new FormControl(false, [Validators.requiredTrue])
     });
   }
 
@@ -63,7 +66,7 @@ get email() {
   }
  
   onRegister(){
-    
+    this.submitted = true;
       this.postRegistration();
       console.log(this.frmRegister.value);
       // this.frmRegister.reset();

@@ -1,10 +1,9 @@
+
 <div id="container">
     <div class="login-nav-bar">
-        <ul class="navlist">
-            <li class="nav-list-item"><a routerLink="/login" routerLinkActive="active">Sign in</a></li>
-            <li class="nav-list-item"><a routerLink="/registration" routerLinkActive="active">Sign up</a></li>
-        </ul>
+        <app-navbar></app-navbar>
     </div>
+    
     <div class="hero-section">
         <div class="signup-box">
             <div class="signup-img"></div>
@@ -38,8 +37,9 @@
                     </div>
 
                     <div class="form-group signup-checkbox">
-                        <input type="checkbox"  formControlName="termsncondition" name="termsncondition" class="form-control signup-checkbox-lable">
-                        <label for="" class="signup-checkboxl">Agree to terms and conditions</label>
+                        <!-- <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" /> -->
+                        <input type="checkbox"  formControlName="termsncondition" name="termsncondition" class="signup-checkbox-lable">
+                        <label for="termsncondition" >Agree to terms and conditions</label>
                         <small *ngIf="termsncondition.errors && termsncondition.touched" class="text-danger">field required</small>
                     </div>
 

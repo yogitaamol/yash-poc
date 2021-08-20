@@ -8,6 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CutomerlistComponent } from '../cutomerlist/cutomerlist.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LatestResultComponent } from './components/latest-result/latest-result.component';
+import { TimeSpentComponent } from './components/time-spent/time-spent.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 
 @NgModule({
@@ -15,7 +18,11 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegistrationComponent,
     CutomerlistComponent,
-    HomeComponent
+    HomeComponent,
+    LatestResultComponent,
+    TimeSpentComponent,
+    NavbarComponent
+    
   ],
   imports: [
     CommonModule,

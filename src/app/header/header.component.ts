@@ -7,6 +7,7 @@ import { PolicyService } from '../policy.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isShowNavBar = true;
 
   constructor(private policy : PolicyService) { }
 
@@ -17,5 +18,6 @@ export class HeaderComponent implements OnInit {
   logout(){
 this.policy.logout();
   }
+  
 
 }

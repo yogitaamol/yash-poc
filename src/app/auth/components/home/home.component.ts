@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  isShowNavBar = false;
   constructor(
     private router:Router,
     private http: HttpClient

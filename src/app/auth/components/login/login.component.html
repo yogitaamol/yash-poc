@@ -1,15 +1,12 @@
-<div class="login-nav-bar">
-    <ul class="navlist">
-        <!-- <li class="nav-list-item"><a routerLink="/home" routerLinkActive="active">Home</a></li> -->
-        <li class="nav-list-item"><a routerLink="/login" routerLinkActive="active">Sign in</a></li>
-        <li class="nav-list-item"><a routerLink="/registration" routerLinkActive="active">Sign up</a></li>
-    </ul>
-</div>
 <div id="container">
+    <div class="login-nav-bar">
+        <app-navbar></app-navbar>
+    </div>
+    
     <main>
         <div class="container frm-container" [formGroup]="frmLogin">
             <h2 class="pb-2 frm-heading">Sign in</h2>
-            <h6 class="frm-heading2"> <a href="" routerLink="/registration">Need an account?</a></h6>
+            <h6 class="frm-heading2"> <a href="/registration" routerLink="/registration">Need an account?</a></h6>
             <form class="">
 
                 <div class="form-group input-container">

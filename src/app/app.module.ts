@@ -14,12 +14,15 @@ import { HeaderComponent } from './header/header.component';
 import { JwtInterceptor } from './service/jwt.service';
 import { ErrorInterceptor } from './service/error.service';
 import { fakeBackendProvider } from './service/fake.service';
+// import { NavbarComponent } from './navbar/navbar.component';
+import { DataService } from './data-subject.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    // NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { fakeBackendProvider } from './service/fake.service';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    fakeBackendProvider
+    fakeBackendProvider, DataService
 ],
   bootstrap: [AppComponent]
 })
